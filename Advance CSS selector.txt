@@ -1,0 +1,45 @@
+7. CSS seelector
+
+
+
+By.cssSelctor()
+
+
+CSS syntax:
+
+
+html tagname[attributename='attribute value']
+
+
+1.CSS selector by using id
+
+input[id='email']--------------> input#email
+
+
+
+2.CSS selector by using class
+
+input[class='inputtext _55r1 _6luy']--------->input.inputtext._55r1._6luy
+
+
+
+3.Css selector by attribute
+
+input[placeholder='Email address or phone number']
+
+
+4. Css Selector by using Multiple Attributes
+
+input[placeholder='Email address or phone number'][name='email'][id='email']
+
+
+
+5. starts with String text
+
+html tag[attribute^='starting string']-------------> button[id^='u_0_d'] input[placeholder^='Email']
+
+
+6. ends with String text
+
+html tag[attribute$='ending string']-------------> button[id='u_0_d']
+input[placeholder$='number']
