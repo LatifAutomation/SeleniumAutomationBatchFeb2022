@@ -1,0 +1,185 @@
+Xpath Locator
+
+
+By.xpath("")
+
+
+
+Basic xpath syntax:
+
+
+
+ 
+  //Html tagname[@attribute name='attribute value']
+
+
+
+ // current tag/node
+
+ @select attribute
+
+
+**************************************************************************
+
+
+
+
+1. Absolute xpath
+
+
+root of  the parent to the target child
+
+"/"
+
+
+html/body/div[1]/input[1]
+
+html/body/div[2]/a[1]
+
+
+
+
+*-************************************
+
+2. Relative xpath
+
+target child 
+
+"//"
+
+
+//div[2]/a[2]
+
+
+
+
+
+**********************************************************
+
+
+
+basic synatx of Xpath
+
+
+//html tagname[@attributename='attribute value']
+
+
+3. Xpath by contains text
+driver.findElement(By.xpath("//span[contains(text(),'Next')]")).click();
+
+
+
+4. Xpath by contains attribute
+
+//html tagname[contains(@attribute,"attribute value")]
+
+
+
+
+P     Q        P AND Q
+
+
+
+T     T        T
+
+
+T     F        F
+
+
+F     T        F
+
+
+F     F        F
+
+
+
+
+P     Q        P OR Q
+
+
+
+T     T        T
+
+
+T     F        T
+
+
+F     T        T
+
+
+F     F        F
+
+
+
+
+
+AND
+
+
+//html tagname[@attribute1='value2' and @attribute2='value2']
+
+
+
+
+OR
+
+
+//input[@class='inputtext _55r1 _6luy' or@id='emahttgyuyil']
+
+
+5. Xpath bu using text
+
+//Html tagname[text()='text']
+
+
+6. Xpath starts with
+
+//Html tagname[starts-with(@attributename,'attributevalue')]
+
+//input[starts-with(@placeholder,'Email')]
+//input[starts-with(@placeholder,'Pa')]
+
+
+7.Chained xpath
+
+//html tagname1[@attribute1='attributevalue1']//html tagname2[@attribute2='attributevalue2']//
+
+//label[@class='i_agree_t relative mb-15 inline-block']//input[@name='i_agree']
+
+
+8.xpath by following
+
+
+//html tagname[@attributename='attributevalue']//following::tagname
+
+
+9.xpath by using following sibling
+
+//html tagname[[@attributename='attributevalue']//following-sibling::tag[index]
+
+//option[@value='Student/Freelancer']//following-sibling::option[4]
+
+
+10. Xpath by preceding
+
+//input[@id='org_name']//preceding::input[@id='userpassword']
+
+11.9.xpath by using preceding sibling
+
+//html tagname[[@attributename='attributevalue']//preceding-sibling::tag[index]
+
+//option[@value='Student/Freelancer']//preceding-sibling::option[4]
+
+ //option[@value='Founder/CXO']//preceding-sibling::option[4]
+
+12.Xpath by child
+
+//div[@class='_6ltg']//child::button
+
+
+13.Xpath by parent
+
+//html tagname[@attribute name='attribute value']//parent::tagname
+
+
+
