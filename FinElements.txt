@@ -1,0 +1,26 @@
+findElement                                  findElements
+
+
+
+
+driver.findElemnt(By.id(""))
+
+
+
+single webelement                           Multiple webelement
+
+
+WebElement                                 List<WebElement>
+
+
+NoSuchElementException                      No exception
+
+no size                                     size=0,index
+
+
+
+
+isDisplayed()----> visible
+
+isSelected()------>
+ieEnabled()-------->
