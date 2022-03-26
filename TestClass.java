@@ -1,4 +1,4 @@
-package PageObjectModel;
+package PageFactory;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,19 +11,23 @@ public class TestClass {
 		driver.get("https://www.browserstack.com/");
 		driver.manage().window().maximize();
 		
+		
 		HomePage hp=new HomePage(driver);
+		hp.verifyHeader();
+		//hp.signupClick();
+		hp.signinClick();
 		
-		hp.headerverify();
-		hp.clickGetstartedFree();
+		/*SignUpClass sp=new SignUpClass(driver);
+		sp.enterFullname("naina");
+		sp.enteremail("naina21n@gmail.com");
+		sp.enterpass("Test@12345");
+		sp.checkboxclick();
+		sp.submitclick();*/
 		
-		
-		FreeAccountPage fa=new FreeAccountPage(driver);
-		
-		fa.enterFullname();
-		fa.enteremail();
-		fa.enterpass();
-		fa.checkboxclick();
-		fa.signupClick();
+		SignInpage si=new SignInpage(driver);
+		si.username("naikpratibha263@gmail.com");
+		si.password("Test@1234");
+		si.signInClick();
 		
 	}
 

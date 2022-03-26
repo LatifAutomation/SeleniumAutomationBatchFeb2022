@@ -1,48 +1,52 @@
-package PageObjectModel;
+package PageFactory;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-public class HomePage 
+public class HomePage
 {
-	WebDriver ldriver;
+
+	WebDriver driver;
 	
-	By header=By.xpath("//h1");
+	@FindBy(xpath="//h1")
+	WebElement header;
 	
-	By getstarfree=By.xpath("//a[@id='signupModalButton']");
+	@FindBy(id="signupModalButton")
+	WebElement signupbtn;
 	
-	String exttitle="App & Browser Testing Made Easy";
+	@FindBy(linkText="Sign in")
+	WebElement signinlink;
 	
 	public HomePage(WebDriver driver)
 	{
-		this.ldriver=driver;
+		this.driver=driver;
+		
+		PageFactory.initElements(driver, this);
 	}
 	
 	
-	public void headerverify()
+	public void verifyHeader()
 	{
-		String actualtitle = ldriver.findElement(header).getText();
-		if(actualtitle.equalsIgnoreCase(exttitle))
-		{
-			System.out.println("Header is verified");
+		String Expectedtitle = "App & Browser Testing Made Easy";
 		
-		}
-		
-		else
-		{
-			System.out.println("We are in wrong page");
-		}
-
-    }
-	
-	
-	public void clickGetstartedFree()
-	{
-	
-		ldriver.findElement(getstarfree).click();
-		
-     
+		String actualtitle = header.getText();
+		assertequals(Expectedtitle,actualtitle);
 	}
 
+	public void signupClick()
+	{
+		signupbtn.click();
+	}
 	
+	public void signinClick()
+	{
+		signinlink.click();
+	}
+
+	private void assertequals(String expectedtitle, String actualtitle) {
+		// TODO Auto-generated method stub
+		
+	}
 }
